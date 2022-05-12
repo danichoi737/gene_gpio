@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo ""
+echo "This script copies the rules to '/etc/udev/rules.d/' and applies."
+echo "GENE-SKU6 GPIO User : root:gpio"
+
+sudo cp /home/gene/develop/gpio_test/99-gene-gpio.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+echo ""
+echo "GPIO rules reloaded."
